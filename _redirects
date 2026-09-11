@@ -9,3 +9,16 @@
 /privacy-policy          /privacy           301
 /terms-and-conditions    /terms             301
 /accessibility-statement /accessibility     301
+/pricing-plans/list      /services          301
+/services-7              /services          301
+
+# Framework stage pages moved from /rooted-resonace-framework/<stage> (note the
+# original Wix typo) to clean top-level slugs. Specific rules first, wildcard
+# catch-all last so it only fires for a stage/spelling we didn't anticipate.
+/rooted-resonace-framework/awaken*     /awaken      301
+/rooted-resonace-framework/understand* /understand  301
+/rooted-resonace-framework/reconnect*  /reconnect   301
+/rooted-resonace-framework/become*     /become      301
+/rooted-resonace-framework/relate*     /relate      301
+/rooted-resonace-framework             /framework   301
+/rooted-resonace-framework/*           /framework   301
