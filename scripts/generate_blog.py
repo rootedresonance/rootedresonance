@@ -4,7 +4,7 @@
 published:false does not hide a post, it removes it: the file is deleted from
 disk and dropped from the sitemap, so the URL genuinely 404s.
 
-Each post's "body" is a list of blocks. Two formats are accepted so old and
+Each post's "content" is a list of blocks. Two formats are accepted so old and
 new posts both work:
   - new (Tina "Post" list, no markdown needed): {"_template": "paragraph"|"heading"|"quote", "text": "..."}
   - legacy (plain string): "## text" -> heading, "> text" -> pull quote, anything else -> paragraph
