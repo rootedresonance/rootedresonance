@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Blog generator. Tina edits content/blog/*.json only; this writes the HTML.
 
 published:false does not hide a post, it removes it: the file is deleted from
