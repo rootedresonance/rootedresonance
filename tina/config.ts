@@ -88,7 +88,7 @@ export default defineConfig({
                                                       'Controls where the big headline wraps, using <br> between lines. Example: "I spent years<br>intellectualizing<br>my problems." Leave blank to just use the Title as one line.',
                         },
                         {
-                                      type: "object", name: "body", label: "Post", list: true, required: true,
+                                      type: "object", name: "content", label: "Post", list: true, required: true,
                                       description:
                                                       'Click "+ Post" below to add each part of your post, in order -- one block per paragraph, heading, or pull quote. Choose the kind of block from the dropdown; no symbols or formatting codes to remember. A short post might be: Paragraph, Paragraph, Heading, Paragraph, Pull Quote, Paragraph.',
                                       templates: [
