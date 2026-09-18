@@ -4,7 +4,7 @@
   "scripts": {
     "check": "python3 scripts/check_redirects.py",
     "blog": "python3 scripts/generate_blog.py",
-    "admin": "tinacms build",
+    "admin": "tinacms build --skip-cloud-checks",
     "build": "npm run check && npm run blog && npm run admin && bash scripts/collect.sh",
     "dev": "tinacms dev -c \"python3 -m http.server 8000\""
   },
