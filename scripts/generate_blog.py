@@ -156,7 +156,7 @@ def fill_defaults(p):
         p['stageLabel'] = ('Stage %s - %s' % (numeral, p['stage'])) if numeral else p['stage']
     p.setdefault('stageLabel', '')
     if not p.get('readingTime'):
-        p['readingTime'] = estimate_reading_time(p.get('body', []))
+        p['readingTime'] = estimate_reading_time(p.get('content', []))
     if not p.get('metaDescription'):
         p['metaDescription'] = p.get('excerpt', p.get('title', ''))
     if not p.get('titleHtml'):
@@ -198,7 +198,7 @@ def build_post(p):
                    '      <div class="k">%s</div>\n      <p>%s</p>\n    </div>'
                    % (esc(p['endnoteTitle']), esc(p['endnoteBody'])))
     article = ('<article>\n  <div class="wrap col">\n%s%s\n  </div>\n</article>'
-               % (render_body(p['body']), endnote))
+               % (render_body(p['content']), endnote))
     s = re.sub(r'<article>.*?</article>', lambda _: article, s, flags=re.S)
     return s
 
