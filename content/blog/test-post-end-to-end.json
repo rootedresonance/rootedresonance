@@ -5,6 +5,10 @@
     {
       "text": "Test Heading",
       "_template": "heading"
+    },
+    {
+      "text": "Test Paragraph",
+      "_template": "paragraph"
     }
   ],
   "excerpt": "Test summary for test post...",
