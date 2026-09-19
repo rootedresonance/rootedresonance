@@ -160,9 +160,17 @@ def fill_defaults(p):
         p['readingTime'] = estimate_reading_time(p.get('content', []))
     if not p.get('metaDescription'):
         p['metaDescription'] = p.get('excerpt', p.get('title', ''))
-    if not p.get('titleHtml'):
-        p['titleHtml'] = esc(p.get('title', ''))
     return p
+
+
+def render_title_html(p):
+    """Builds the big headline's HTML. Annie never types HTML: if she added
+    lines in the 'Break the title into lines' list, each one is escaped and
+    joined with <br> here. If she left it empty, the plain Title is used."""
+    lines = [l.strip() for l in (p.get('titleLines') or []) if isinstance(l, str) and l.strip()]
+    if lines:
+        return '<br>'.join(esc(l) for l in lines)
+    return esc(p.get('title', ''))
 
 
 def build_post(p):
@@ -188,7 +196,7 @@ def build_post(p):
       '    <div class="crumb"><a href="blog.html">Journal</a> &nbsp;/&nbsp; %s</div>\n'
       '    <h1>%s</h1>\n    <div class="byline">\n      <span>%s</span>\n'
       '      <span>%s</span>\n    </div>\n  </div>\n</header>'
-      % (esc(p.get('stageLabel', '')), p.get('titleHtml') or esc(p['title']),
+      % (esc(p.get('stageLabel', '')), render_title_html(p),
          esc(p.get('author', 'Annie Memmott, LPC')), esc(p.get('dateLabel', p['date'])))
     )
     s = re.sub(r'<header class="post">.*?</header>', lambda _: header, s, flags=re.S)
