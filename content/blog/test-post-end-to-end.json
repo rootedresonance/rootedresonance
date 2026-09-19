@@ -9,6 +9,10 @@
     {
       "text": "Test Paragraph",
       "_template": "paragraph"
+    },
+    {
+      "text": "Test Quote",
+      "_template": "quote"
     }
   ],
   "excerpt": "Test summary for test post...",
