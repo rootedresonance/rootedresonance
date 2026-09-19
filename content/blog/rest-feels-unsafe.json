@@ -1,86 +1,90 @@
 {
-    "title": "Rest feels unsafe when you were only ever useful.",
-    "published": true,
-    "slug": "rest-feels-unsafe",
-    "date": "2026-08-28",
-    "dateLabel": "August 28, 2026",
-    "author": "Annie Memmott, LPC",
-    "stage": "Reconnect",
-    "stageLabel": "Stage III · Reconnect",
-    "readingTime": "3 min",
-    "excerpt": "If stopping makes you anxious, that is not laziness in reverse. It is a nervous system that learned being still was the moment things went wrong.",
-    "metaDescription": "Why rest can feel unsafe, and what to do about it. On nervous system states, productivity as a survival strategy, and learning to be still. From Annie Memmott, LPC.",
-    "titleHtml": "Rest feels unsafe<br>when you were only<br>ever useful.",
-    "content": [
-          {
-                  "_template": "paragraph",
-                  "text": "I sit down and something in me starts scanning. Not a thought exactly. More like a low hum that says this is not allowed yet. There is something I have forgotten. Get up."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "People describe this to me as laziness which is almost exactly backwards. Laziness would be restful. This is the opposite of restful. It is work that produces nothing and exhausts you anyway."
-          },
-          {
-                  "_template": "heading",
-                  "text": "Being useful is a strategy, not a personality"
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "For a lot of people usefulness was the thing that made them safe. Being helpful. Being easy. Being the one who noticed what everyone else needed. Not because it was fun but because it worked and because the alternative was often worse."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "A nervous system that learned this does not file it under preference. It files it under survival. So when you stop being useful even for an hour the system does not read that as rest. It reads it as exposure."
-          },
-          {
-                  "_template": "quote",
-                  "text": "Nothing you did to survive was wrong. It was for a different life than the one you have now. That is why willpower is such a poor tool here. You are not arguing with a bad habit. You are asking a protective response to stand down in a situation it has never once considered safe."
-          },
-          {
-                  "_template": "heading",
-                  "text": "What that actually feels like"
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "Often it does not feel like fear. It feels like a sudden urgent memory of an email. It feels like reorganizing a drawer at 11pm. It feels like being unable to watch a movie without also doing something with your hands."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "The body has found a way to keep moving that does not look like panic. That is part of why it goes unexamined for years."
-          },
-          {
-                  "_template": "heading",
-                  "text": "Where to start and it is smaller than you think"
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "Not a week off. A week off would be flooding and your system would spend the whole time bracing. Start with something short enough that the alarm does not have time to fully arrive. Two minutes of sitting after you close your laptop before you stand up. One song listened to without doing anything else. Lying down on the floor for the length of a kettle boiling."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "The goal is not to enjoy it. The first several times you probably will not. The goal is to give your nervous system repeated evidence that stillness happened and nothing went wrong. That evidence accumulates. It is slow and then it is not."
-          },
-          {
-                  "_template": "heading",
-                  "text": "Why this is body work rather than talk"
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "You can understand every word of this and still find yourself remembering that email. Organizing that drawer. Or doing the dishes while you watch TV."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "Insight lives in one part of the brain and the pattern runs in another. That is a sentence I keep coming back to because it explains so much of what people bring me."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "Rest is not something to be convinced of. It is something to be practiced in small doses with a body that gets to find out for itself. That is why the work here is breath and sound and stillness rather than a better explanation."
-          },
-          {
-                  "_template": "paragraph",
-                  "text": "You are not broken for finding this hard. You are carrying a strategy that kept you safe and it has not yet been told that the conditions changed."
-          }
-    ],
-    "endnoteTitle": "If you are in this stage",
-    "endnoteBody": "Reconnect is Stage III of the Rooted Resonance framework. If rest is the thing you cannot make yourself do, sound healing and breathwork are usually where this work starts, because neither one asks you to explain anything."
+  "title": "Rest feels unsafe when you were only ever useful.",
+  "published": true,
+  "slug": "rest-feels-unsafe",
+  "date": "2026-08-28",
+  "dateLabel": "August 28, 2026",
+  "author": "Annie Memmott, LPC",
+  "stage": "Reconnect",
+  "stageLabel": "Stage III · Reconnect",
+  "readingTime": "3 min",
+  "excerpt": "If stopping makes you anxious, that is not laziness in reverse. It is a nervous system that learned being still was the moment things went wrong.",
+  "metaDescription": "Why rest can feel unsafe, and what to do about it. On nervous system states, productivity as a survival strategy, and learning to be still. From Annie Memmott, LPC.",
+  "content": [
+    {
+      "_template": "paragraph",
+      "text": "I sit down and something in me starts scanning. Not a thought exactly. More like a low hum that says this is not allowed yet. There is something I have forgotten. Get up."
+    },
+    {
+      "_template": "paragraph",
+      "text": "People describe this to me as laziness which is almost exactly backwards. Laziness would be restful. This is the opposite of restful. It is work that produces nothing and exhausts you anyway."
+    },
+    {
+      "_template": "heading",
+      "text": "Being useful is a strategy, not a personality"
+    },
+    {
+      "_template": "paragraph",
+      "text": "For a lot of people usefulness was the thing that made them safe. Being helpful. Being easy. Being the one who noticed what everyone else needed. Not because it was fun but because it worked and because the alternative was often worse."
+    },
+    {
+      "_template": "paragraph",
+      "text": "A nervous system that learned this does not file it under preference. It files it under survival. So when you stop being useful even for an hour the system does not read that as rest. It reads it as exposure."
+    },
+    {
+      "_template": "quote",
+      "text": "Nothing you did to survive was wrong. It was for a different life than the one you have now. That is why willpower is such a poor tool here. You are not arguing with a bad habit. You are asking a protective response to stand down in a situation it has never once considered safe."
+    },
+    {
+      "_template": "heading",
+      "text": "What that actually feels like"
+    },
+    {
+      "_template": "paragraph",
+      "text": "Often it does not feel like fear. It feels like a sudden urgent memory of an email. It feels like reorganizing a drawer at 11pm. It feels like being unable to watch a movie without also doing something with your hands."
+    },
+    {
+      "_template": "paragraph",
+      "text": "The body has found a way to keep moving that does not look like panic. That is part of why it goes unexamined for years."
+    },
+    {
+      "_template": "heading",
+      "text": "Where to start and it is smaller than you think"
+    },
+    {
+      "_template": "paragraph",
+      "text": "Not a week off. A week off would be flooding and your system would spend the whole time bracing. Start with something short enough that the alarm does not have time to fully arrive. Two minutes of sitting after you close your laptop before you stand up. One song listened to without doing anything else. Lying down on the floor for the length of a kettle boiling."
+    },
+    {
+      "_template": "paragraph",
+      "text": "The goal is not to enjoy it. The first several times you probably will not. The goal is to give your nervous system repeated evidence that stillness happened and nothing went wrong. That evidence accumulates. It is slow and then it is not."
+    },
+    {
+      "_template": "heading",
+      "text": "Why this is body work rather than talk"
+    },
+    {
+      "_template": "paragraph",
+      "text": "You can understand every word of this and still find yourself remembering that email. Organizing that drawer. Or doing the dishes while you watch TV."
+    },
+    {
+      "_template": "paragraph",
+      "text": "Insight lives in one part of the brain and the pattern runs in another. That is a sentence I keep coming back to because it explains so much of what people bring me."
+    },
+    {
+      "_template": "paragraph",
+      "text": "Rest is not something to be convinced of. It is something to be practiced in small doses with a body that gets to find out for itself. That is why the work here is breath and sound and stillness rather than a better explanation."
+    },
+    {
+      "_template": "paragraph",
+      "text": "You are not broken for finding this hard. You are carrying a strategy that kept you safe and it has not yet been told that the conditions changed."
+    }
+  ],
+  "endnoteTitle": "If you are in this stage",
+  "endnoteBody": "Reconnect is Stage III of the Rooted Resonance framework. If rest is the thing you cannot make yourself do, sound healing and breathwork are usually where this work starts, because neither one asks you to explain anything.",
+  "titleLines": [
+    "Rest feels unsafe",
+    "when you were only",
+    "ever useful."
+  ]
 }
