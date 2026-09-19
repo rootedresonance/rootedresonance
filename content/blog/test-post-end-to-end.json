@@ -1,0 +1,13 @@
+{
+  "title": "Test Post (End-to-End)",
+  "published": true,
+  "content": [
+    {
+      "text": "Test Heading",
+      "_template": "heading"
+    }
+  ],
+  "excerpt": "Test summary for test post...",
+  "slug": "test",
+  "date": "2026-09-19"
+}
