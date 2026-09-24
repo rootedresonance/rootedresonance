@@ -23,8 +23,8 @@ OFFERINGS = {
          ("04","Integrating","What changes gets practiced in real decisions and real relationships, not only in the room.")],
   facts=[("Rate","$150","Self pay"),("Insurance","Accepted","Most major plans"),
          ("Format","Telehealth","Across OH, AZ, CO"),("Framework","Stages II &amp; IV","Understand, Become")],
-  pair=("relational-therapy.html","Relational Therapy","Many people move between the two. Individual work builds the ground, relational work is where it gets tested."),
-  cta="Inquire about therapy", next_=("relational-therapy.html","Also clinical","Relational Therapy")),
+  pair=("/relational-therapy","Relational Therapy","Many people move between the two. Individual work builds the ground, relational work is where it gets tested."),
+  cta="Inquire about therapy", next_=("/relational-therapy","Also clinical","Relational Therapy")),
 
 "relational-therapy": dict(
   name="Relational Therapy", icon="relational", track="clin", stage="Stage V",
@@ -47,8 +47,8 @@ OFFERINGS = {
          ("04","Carrying it out","The work is only real once it survives an ordinary Tuesday.")],
   facts=[("Rate","$150","Self pay"),("Insurance","Accepted","Most major plans"),
          ("Format","Telehealth","Across OH, AZ, CO"),("Framework","Stage V","Relate")],
-  pair=("somatic-therapy.html","Somatic Therapy","Individual work on the adaptations underneath. Often the ground that relational work stands on."),
-  cta="Inquire about therapy", next_=("sound-healing.html","When words are not the way in","Sound Healing")),
+  pair=("/somatic-therapy","Somatic Therapy","Individual work on the adaptations underneath. Often the ground that relational work stands on."),
+  cta="Inquire about therapy", next_=("/sound-healing","When words are not the way in","Sound Healing")),
 
 "sound-healing": dict(
   name="Sound Healing", icon="sound", track="well", stage="Stage III",
@@ -71,8 +71,8 @@ OFFERINGS = {
          ("04","Returning","Slow re-entry, water, and space to say anything that surfaced, or to say nothing and let it settle.")],
   facts=[("Rate","$60","Per session"),("Length","60 minutes","Arrive a few minutes early"),
          ("Type","Wellness","Not psychotherapy"),("Available","Anyone","No state restrictions")],
-  pair=("breathwork.html","Breathwork","Where sound works on you, breath is something you do. Many people move between the two as the stage deepens."),
-  cta="Book a sound session", next_=("breathwork.html","Also stage III","Breathwork")),
+  pair=("/breathwork","Breathwork","Where sound works on you, breath is something you do. Many people move between the two as the stage deepens."),
+  cta="Book a sound session", next_=("/breathwork","Also stage III","Breathwork")),
 
 "breathwork": dict(
   name="Breathwork", icon="breath", track="well", stage="Stage III",
@@ -95,8 +95,8 @@ OFFERINGS = {
          ("04","Taking it with you","You leave with something you can do at home, which is the point.")],
   facts=[("Rate","$75","Per session"),("Length","90 minutes","Includes orientation"),
          ("Type","Wellness","Not psychotherapy"),("Available","Anyone","No state restrictions")],
-  pair=("sound-healing.html","Sound Healing","If doing feels like too much on a given day, sound asks nothing of you at all."),
-  cta="Book breathwork", next_=("workshops.html","When you are ready for company","Workshops")),
+  pair=("/sound-healing","Sound Healing","If doing feels like too much on a given day, sound asks nothing of you at all."),
+  cta="Book breathwork", next_=("/workshops","When you are ready for company","Workshops")),
 
 "workshops": dict(
   name="Workshops", icon="workshops", track="well", stage="Stage V",
@@ -119,8 +119,8 @@ OFFERINGS = {
          ("04","Closing","Time to land before you go back out into the day.")],
   facts=[("Pricing","Varies","By format and length"),("Group","Small","Intentionally"),
          ("Type","Wellness","Not group therapy"),("Status","Waitlist","Open now")],
-  pair=("sound-healing.html","Sound Healing","If a group feels like a lot right now, one to one is a reasonable place to start."),
-  cta="Join the waitlist", next_=("index.html#framework","Back to the beginning","The Framework")),
+  pair=("/sound-healing","Sound Healing","If a group feels like a lot right now, one to one is a reasonable place to start."),
+  cta="Join the waitlist", next_=("/#framework","Back to the beginning","The Framework")),
 }
 
 for slug, o in OFFERINGS.items():
@@ -137,8 +137,8 @@ for slug, o in OFFERINGS.items():
              "This is a wellness and educational service. It is not psychotherapy, diagnosis or "
              "crisis care, and no therapeutic relationship is created by booking it. It is open to "
              "anyone regardless of where you live.")
-    body = head("%s | %s" % (o["name"], SITE), o["desc"], active="services.html")
-    body += phead([("services.html","Offerings"),(None,o["name"])],
+    body = head("%s | %s" % (o["name"], SITE), o["desc"], active="/services")
+    body += phead([("/services","Offerings"),(None,o["name"])],
                   "%s &nbsp;·&nbsp; %s" % (o["stage"], o["stage_line"]),
                   o["title"], o["sub"])
     body += '''<section class="sec alt">
@@ -193,8 +193,8 @@ for slug, o in OFFERINGS.items():
     <h2 class="rv">%s</h2>
     <p class="rv">If you are not sure whether this is the right fit, start with a conversation. No cost, no commitment.</p>
     <div class="row rv">
-      <a href="contact.html" class="btn btn-solid">%s <span class="arw">&rarr;</span></a>
-      <a href="contact.html" class="btn btn-ghost">Ask a question first</a>
+      <a href="/contact" class="btn btn-solid">%s <span class="arw">&rarr;</span></a>
+      <a href="/contact" class="btn btn-ghost">Ask a question first</a>
     </div>
     <p class="rv" style="max-width:640px;margin:30px auto 0;font-size:12.5px;color:var(--cream-faint);line-height:1.65">%s</p>
   </div>

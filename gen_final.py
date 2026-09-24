@@ -50,4 +50,4 @@ another format, please contact our accessibility coordinator:</p>
 <p class="updated">Last updated ''' + UPDATED + '''</p>
 </div></section>
 '''
-b += foot(); write("accessibility.html", b)
+b += foot(); write("/accessibility", b)

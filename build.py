@@ -8,17 +8,17 @@ STATES = "Ohio, Arizona and Colorado"
 STATES_SHORT = "OH · AZ · CO"
 UPDATED = "August 2026"
 
-NAV = [("about.html","About"),("services.html","Offerings"),
-       ("index.html#framework","Framework"),("blog.html","Journal")]
+NAV = [("/about","About"),("/services","Offerings"),
+       ("/#framework","Framework"),("/blog","Journal")]
 
 FOOT = {
- "Offerings":[("somatic-therapy.html","Somatic Therapy"),("relational-therapy.html","Relational Therapy"),
-              ("sound-healing.html","Sound Healing"),("breathwork.html","Breathwork"),
-              ("workshops.html","Workshops")],
- "Practice":[("about.html","About Annie"),("index.html#framework","The Framework"),
-             ("blog.html","Journal"),("faq.html","FAQ"),("contact.html","Contact")],
- "Legal":[("good-faith-estimate.html","Good Faith Estimate"),("privacy.html","Privacy Policy"),
-          ("terms.html","Terms & Conditions")],
+ "Offerings":[("/somatic-therapy","Somatic Therapy"),("/relational-therapy","Relational Therapy"),
+              ("/sound-healing","Sound Healing"),("/breathwork","Breathwork"),
+              ("/workshops","Workshops")],
+ "Practice":[("/about","About Annie"),("/#framework","The Framework"),
+             ("/blog","Journal"),("/faq","FAQ"),("/contact","Contact")],
+ "Legal":[("/good-faith-estimate","Good Faith Estimate"),("/privacy","Privacy Policy"),
+          ("/terms","Terms & Conditions")],
 }
 
 ICONS = {
@@ -57,12 +57,12 @@ def head(title, desc, active=""):
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="mark">
+  <a href="/" class="mark">
     <img class="glyph" src="media/logo-mark.png" alt="">
     <span class="b">Rooted</span> <span class="a">Resonance</span></a>
   <button class="burger" id="burger" aria-expanded="false" aria-controls="navlinks">Menu</button>
   <div class="navlinks" id="navlinks">{links}
-    <a href="contact.html" class="navbtn">Reach out</a>
+    <a href="/contact" class="navbtn">Reach out</a>
   </div>
 </nav>
 

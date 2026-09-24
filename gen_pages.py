@@ -4,7 +4,7 @@ from build import *
 # ---------------------------------------------------------------- ABOUT
 b = head("About Annie Memmott, LPC | " + SITE,
     "Annie Memmott is a queer, ethically non monogamous, kink and sex positive Licensed Professional Counselor in Ohio, Arizona and Colorado, serving LGBTQIA+, neurodivergent and kinky communities.",
-    active="about.html")
+    active="/about")
 b += phead(None, "Meet Annie", "I knew who I needed to be<br>for other people.",
     "Before I ever came to know how to be myself.")
 b += '''<section class="sec" style="padding-top:20px">
@@ -67,13 +67,13 @@ b += '''<section class="sec" style="padding-top:20px">
     <p class="rv">Whether you are navigating relationship challenges, rebuilding your sense of self,
     or longing to feel more at home in your own life, you are welcome here.</p>
     <div class="row rv">
-      <a href="index.html#framework" class="btn btn-solid">Find where you are <span class="arw">&rarr;</span></a>
-      <a href="contact.html" class="btn btn-ghost">Reach out</a>
+      <a href="/#framework" class="btn btn-solid">Find where you are <span class="arw">&rarr;</span></a>
+      <a href="/contact" class="btn btn-ghost">Reach out</a>
     </div>
   </div>
 </section>
 '''
-b += foot(); write("about.html", b)
+b += foot(); write("/about", b)
 
 # ---------------------------------------------------------------- SERVICES HUB
 def card(href, icon, name, copy, track, price):
@@ -82,7 +82,7 @@ def card(href, icon, name, copy, track, price):
 
 b = head("Offerings | " + SITE,
     "Somatic and relational therapy in Ohio, Arizona and Colorado. Sound healing, breathwork and workshops available nationwide. Every offering connects to a stage of the Rooted Resonance framework.",
-    active="services.html")
+    active="/services")
 b += phead(None, "What I Offer",
     "Every offering belongs to<br>a stage of the walk home.",
     "I help people come home to themselves through therapy, sound healing, nervous system education, embodiment practices, and authentic community.")
@@ -138,17 +138,17 @@ b += '''<section class="sec" style="padding-top:10px">
     <h2 class="rv">You don't have to<br>arrive <em>knowing.</em></h2>
     <p class="rv">The framework will tell you where you are, and each stage has a door.</p>
     <div class="row rv">
-      <a href="index.html#framework" class="btn btn-solid">Find your stage <span class="arw">&rarr;</span></a>
-      <a href="faq.html" class="btn btn-ghost">Read the FAQ</a>
+      <a href="/#framework" class="btn btn-solid">Find your stage <span class="arw">&rarr;</span></a>
+      <a href="/faq" class="btn btn-ghost">Read the FAQ</a>
     </div>
   </div>
 </section>
 ''' % (
- card("somatic-therapy.html","somatic","Somatic Therapy","Working with the adaptations that once protected you. Less talking about the problem, more feeling and experiencing.","clin","$150 self pay"),
- card("relational-therapy.html","relational","Relational Therapy","Ongoing support for relational and nervous system work, for people in and out of relationships of all kinds.","clin","$150 self pay"),
- card("sound-healing.html","sound","Sound Healing","Rest, regulation, and integration without needing to talk.","well","$60 &nbsp;/&nbsp; 60 min"),
- card("breathwork.html","breath","Breathwork","Embodiment practice and nervous system education. Learning to listen to your body rather than think your way around it.","well","$75 &nbsp;/&nbsp; 90 min"),
- card("workshops.html","workshops","Workshops","Authentic community. Where self trust gets practiced with other people in the room.","well","Pricing varies"),
+ card("/somatic-therapy","somatic","Somatic Therapy","Working with the adaptations that once protected you. Less talking about the problem, more feeling and experiencing.","clin","$150 self pay"),
+ card("/relational-therapy","relational","Relational Therapy","Ongoing support for relational and nervous system work, for people in and out of relationships of all kinds.","clin","$150 self pay"),
+ card("/sound-healing","sound","Sound Healing","Rest, regulation, and integration without needing to talk.","well","$60 &nbsp;/&nbsp; 60 min"),
+ card("/breathwork","breath","Breathwork","Embodiment practice and nervous system education. Learning to listen to your body rather than think your way around it.","well","$75 &nbsp;/&nbsp; 90 min"),
+ card("/workshops","workshops","Workshops","Authentic community. Where self trust gets practiced with other people in the room.","well","Pricing varies"),
 )
 b = b.replace("OH, AZ, OH","OH, AZ, CO")
-b += foot(); write("services.html", b)
+b += foot(); write("/services", b)

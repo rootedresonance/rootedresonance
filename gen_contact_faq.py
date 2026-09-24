@@ -4,7 +4,7 @@ from build import *
 # ---------------------------------------------------------------- CONTACT
 b = head("Contact | " + SITE,
   "Reach out to Annie Memmott, LPC. Therapy for residents of Ohio, Arizona and Colorado. Sound healing, breathwork and workshops available anywhere.",
-  active="contact.html")
+  active="/contact")
 b += phead(None, "Reach out", "Start with<br>a conversation.",
   "You do not have to know which offering you want, or be able to explain what is going on. A short exchange is enough to find the first door.")
 b += '''<section class="sec" style="padding-top:16px">
@@ -91,14 +91,14 @@ b += '''<section class="sec" style="padding-top:16px">
           <li><span class="lbl">Breathwork</span> $75 for 90 minutes</li>
           <li><span class="lbl">Workshops</span> Pricing varies</li>
         </ul>
-        <p style="margin-top:16px"><a class="link" href="good-faith-estimate.html">Good Faith
+        <p style="margin-top:16px"><a class="link" href="/good-faith-estimate">Good Faith
         Estimate</a> information for self pay clients.</p>
       </div>
     </aside>
   </div>
 </section>
 '''
-b += foot(); write("contact.html", b)
+b += foot(); write("/contact", b)
 
 # ---------------------------------------------------------------- FAQ
 def qa(q,a): return '<details class="qa"><summary>%s</summary><div class="a">%s</div></details>' % (q,a)
@@ -135,7 +135,7 @@ groups = [
     "insurance.</p>"),
  qa("What is a Good Faith Estimate?",
     "<p>If you are uninsured or paying out of pocket, you have a right to an estimate of what your care "
-    "will cost before you start. <a class='link' href='good-faith-estimate.html'>Full details are "
+    "will cost before you start. <a class='link' href='/good-faith-estimate'>Full details are "
     "here</a>, and I will provide one in writing on request.</p>"),
  qa("What is your cancellation policy?",
     "<p>Please give at least 24 hours notice if you need to cancel or reschedule. Late cancellations "
@@ -177,7 +177,7 @@ groups = [
 
 b = head("FAQ | " + SITE,
   "Common questions about therapy, sound healing, breathwork and workshops with Annie Memmott, LPC. Rates, insurance, availability by state, and what to expect.",
-  active="faq.html")
+  active="/faq")
 b += phead(None, "Questions", "The things people<br>ask first.",
   "Rates, availability, what the work is actually like, and how to tell which offering fits.")
 b += '<section class="sec" style="padding-top:16px"><div class="wrap col-c">'
@@ -188,8 +188,8 @@ b += '''<div class="scope-card rv" style="margin-top:20px">
       <h4 style="margin-bottom:14px">Ask me directly.</h4>
       <p style="color:var(--cream-dim);font-size:15px">If your question is not here, send it over.
       A short answer now is better than a wrong guess later.</p>
-      <p style="margin-top:22px"><a href="contact.html" class="btn btn-solid">Reach out <span class="arw">&rarr;</span></a></p>
+      <p style="margin-top:22px"><a href="/contact" class="btn btn-solid">Reach out <span class="arw">&rarr;</span></a></p>
     </div>
   </div></section>
 '''
-b += foot(); write("faq.html", b)
+b += foot(); write("/faq", b)

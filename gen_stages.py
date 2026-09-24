@@ -14,8 +14,8 @@ STAGES = [
               "These patterns and adaptations were intelligent. They helped you navigate the world with the resources you had.",
               "The goal is not to judge the patterns or how you got here. The goal is to learn about them, get curious, and seek understanding."],
    together=["Together, we'll slow down enough to notice what your mind and body have been trying to communicate. Through compassionate exploration, we'll begin identifying the patterns that no longer serve you while honoring the ways they've protected you."],
-   offers=[("contact.html","A Conversation",None,"No cost and no commitment. Say out loud what you have been carrying, and we will find the first door together.")],
-   nxt=("understand.html","Continue the journey","Understand")),
+   offers=[("/contact","A Conversation",None,"No cost and no commitment. Say out loud what you have been carrying, and we will find the first door together.")],
+   nxt=("/understand","Continue the journey","Understand")),
 
  dict(slug="understand", num="II", name="Understand",
    sub="Recognize the adaptations that once protected you.",
@@ -28,9 +28,9 @@ STAGES = [
               "Insight creates possibilities, but lasting change also requires embodiment."],
    together=["We will explore all the things that keep you feeling stuck. Whether it's relationship patterns, feeling like you don't know who you are, or deep generational beliefs that have been unconsciously leading your life.",
              "Here we build understanding without shame, and without treating you as something to be fixed."],
-   offers=[("somatic-therapy.html","Somatic Therapy","clin","Individual clinical work tracing where the old strategies live in the body."),
-           ("blog-adaptation.html","Journal: I spent years intellectualizing my problems",None,"Annie on why insight alone did not change anything, and what finally did.")],
-   nxt=("reconnect.html","Continue the journey","Reconnect")),
+   offers=[("/somatic-therapy","Somatic Therapy","clin","Individual clinical work tracing where the old strategies live in the body."),
+           ("/blog-adaptation","Journal: I spent years intellectualizing my problems",None,"Annie on why insight alone did not change anything, and what finally did.")],
+   nxt=("/reconnect","Continue the journey","Reconnect")),
 
  dict(slug="reconnect", num="III", name="Reconnect",
    sub="Learn to trust your body and nervous system.",
@@ -42,9 +42,9 @@ STAGES = [
               "The body becomes a place to inhabit rather than avoid. Healing begins to shift from intellectual understanding into lived experience."],
    together=["In this stage we are all about the body. The tools offered here have less to do with verbal processing and more to do with somatic experience.",
              "Through breathwork, nervous system education, sound healing, mindfulness, and embodied practices, you'll develop a deeper relationship with yourself from the inside out."],
-   offers=[("sound-healing.html","Sound Healing","well","Rest, regulation, and integration without needing to talk. $60 for 60 minutes."),
-           ("breathwork.html","Breathwork","well","Embodiment practice and nervous system education. $75 for 90 minutes.")],
-   nxt=("become.html","Continue the journey","Become")),
+   offers=[("/sound-healing","Sound Healing","well","Rest, regulation, and integration without needing to talk. $60 for 60 minutes."),
+           ("/breathwork","Breathwork","well","Embodiment practice and nervous system education. $75 for 90 minutes.")],
+   nxt=("/become","Continue the journey","Become")),
 
  dict(slug="become", num="IV", name="Become",
    sub="Discover who you are beneath old patterns.",
@@ -55,9 +55,9 @@ STAGES = [
    pull="This is not about fixing yourself. It is about remembering who you have always been.",
    happening=["After years of living your life in adaptation or survival, you're beginning to organize and arrange your life around authenticity. Your decisions become rooted in a sense of self trust."],
    together=["Through therapy, a community of your choosing, and other offerings like workshops and retreats, we'll create space for you to cultivate a life that feels deeply your own."],
-   offers=[("somatic-therapy.html","Somatic Therapy","clin","The same container, different work. Practising the true self in real decisions and real relationships."),
-           ("workshops.html","Workshops","well","Authentic community, where what you are becoming gets practised alongside others.")],
-   nxt=("relate.html","Continue the journey","Relate")),
+   offers=[("/somatic-therapy","Somatic Therapy","clin","The same container, different work. Practising the true self in real decisions and real relationships."),
+           ("/workshops","Workshops","well","Authentic community, where what you are becoming gets practised alongside others.")],
+   nxt=("/relate","Continue the journey","Relate")),
 
  dict(slug="relate", num="V", name="Relate",
    sub="Create relationships rooted in authenticity and choice.",
@@ -68,9 +68,9 @@ STAGES = [
    pull="It means that after years of leaving yourself behind, you no longer have to abandon yourself to feel like you belong.",
    happening=["As your relationship with yourself strengthens, your relationships with others begin to change. You're more able to respond in ways that honor your needs rather than reacting from old survival strategies."],
    together=["Whether through relationship therapy, coaching, community circles, or ongoing support, we'll continue integrating what you've discovered into your everyday life and relationships."],
-   offers=[("relational-therapy.html","Relational Therapy","clin","For partnerships of any shape or number, and for the people navigating them solo."),
-           ("workshops.html","Workshops","well","Community circles and group practice. Waitlist open.")],
-   nxt=("index.html#framework","Back to the start","The Framework")),
+   offers=[("/relational-therapy","Relational Therapy","clin","For partnerships of any shape or number, and for the people navigating them solo."),
+           ("/workshops","Workshops","well","Community circles and group practice. Waitlist open.")],
+   nxt=("/#framework","Back to the start","The Framework")),
 ]
 
 RAIL = ["awaken","understand","reconnect","become","relate"]
@@ -84,7 +84,7 @@ for s in STAGES:
     rail = ""
     for slug in RAIL:
         on = " on" if slug == s["slug"] else ""
-        rail += ('<a class="st%s" href="%s.html"><span class="node">%s</span>'
+        rail += ('<a class="st%s" href="/%s"><span class="node">%s</span>'
                  '<span class="nm">%s</span><span class="sv">%s</span></a>'
                  % (on, slug, ROMAN[slug], NAMES[slug], SUBS[slug]))
     offers = ""
@@ -92,8 +92,8 @@ for s in STAGES:
         offers += ('<a class="off" href="%s">%s<h4>%s</h4><p>%s</p></a>'
                    % (href, (badge(track) + "<br>") if track else "", name, copy))
     ncols = " three" if len(s["offers"]) > 2 else ""
-    b  = head("%s | The Rooted Resonance Framework" % s["name"], s["desc"], active="index.html#framework")
-    b += phead([("index.html#framework","The Framework"),(None,s["name"])],
+    b  = head("%s | The Rooted Resonance Framework" % s["name"], s["desc"], active="/#framework")
+    b += phead([("/#framework","The Framework"),(None,s["name"])],
                "Stage %s of Five" % s["num"], s["name"], s["sub"])
     b += '<section class="stage-rail-wrap"><div class="wrap"><div class="stage-rail">%s</div></div></section>\n' % rail
     b += '<section class="sec"><div class="wrap col-c prose rv">'

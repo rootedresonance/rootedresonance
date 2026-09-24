@@ -64,13 +64,13 @@ from them.</p>
 <p>If this policy changes, the updated date below will change with it.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy can go through the <a class="link" href="contact.html">contact
+<p>Questions about this policy can go through the <a class="link" href="/contact">contact
 page</a>.</p>
 
 <p class="updated">Last updated ''' + UPDATED + '''</p>
 </div></section>
 '''
-b += foot(); write("privacy.html", b)
+b += foot(); write("/privacy", b)
 
 # ---------------------------------------------------------------- TERMS
 b = head("Terms & Conditions | " + SITE,
@@ -98,7 +98,7 @@ license. Sound healing, breathwork, coaching and workshops are wellness and educ
 are not psychotherapy, and are available regardless of where you live.</p>
 
 <h2>Booking, payment and cancellation</h2>
-<p>Fees are listed on the <a class="link" href="faq.html">FAQ page</a> and are subject to change with
+<p>Fees are listed on the <a class="link" href="/faq">FAQ page</a> and are subject to change with
 notice. Please give at least 24 hours notice to cancel or reschedule. Late cancellations and missed
 appointments may be charged the full session rate.</p>
 
@@ -128,7 +128,7 @@ loss arising from use of this website or reliance on its general information.</p
 <p class="updated">Last updated ''' + UPDATED + '''</p>
 </div></section>
 '''
-b += foot(); write("terms.html", b)
+b += foot(); write("/terms", b)
 
 # ---------------------------------------------------------------- GOOD FAITH ESTIMATE
 b = head("Good Faith Estimate | " + SITE,
@@ -162,7 +162,7 @@ not using insurance an estimate of the expected charges for services.</p>
 are wellness services rather than health care, and their pricing is listed here for transparency.</p>
 
 <h2>How to request one</h2>
-<p>Ask me at any point, in a session or through the <a class="link" href="contact.html">contact
+<p>Ask me at any point, in a session or through the <a class="link" href="/contact">contact
 page</a>, and I will provide it in writing. You do not need a reason, and asking does not commit
 you to anything.</p>
 
@@ -181,4 +181,4 @@ Faith Estimate information (PDF)</a>.</p>
 <p class="updated">Last updated ''' + UPDATED + '''</p>
 </div></section>
 '''
-b += foot(); write("good-faith-estimate.html", b)
+b += foot(); write("/good-faith-estimate", b)
