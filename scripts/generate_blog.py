@@ -193,7 +193,7 @@ def build_post(p):
 
     header = (
       '<header class="post">\n  <div class="wrap col">\n'
-      '    <div class="crumb"><a href="blog.html">Journal</a> &nbsp;/&nbsp; %s</div>\n'
+      '    <div class="crumb"><a href="/blog">Journal</a> &nbsp;/&nbsp; %s</div>\n'
       '    <h1>%s</h1>\n    <div class="byline">\n      <span>%s</span>\n'
       '      <span>%s</span>\n    </div>\n  </div>\n</header>'
       % (esc(p.get('stageLabel', '')), render_title_html(p),
@@ -212,7 +212,7 @@ def build_post(p):
     return s
 
 
-LIST_ENTRY = ('      <a class="entry" href="{slug}.html">\n'
+LIST_ENTRY = ('      <a class="entry" href="/{slug}">\n'
               '        <span class="meta">{meta}</span>\n'
               '        <div>\n          <h2>{title}</h2>\n          <p>{excerpt}</p>\n        </div>\n'
               '        <span class="arw">&rarr;</span>\n      </a>')
