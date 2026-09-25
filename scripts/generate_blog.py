@@ -178,6 +178,8 @@ def build_post(p):
     s = shell()
     title = p['title'].rstrip('.')
     full = f"{title} | Rooted Resonance"
+    if len(full) > 65:  # Google truncates around 60-65; keep the post title whole instead
+        full = title
     url = BASE + p['slug']
     s = re.sub(r'<title>.*?</title>', '<title>%s</title>' % esc(full), s, flags=re.S)
     for attr in ('name="description"', 'property="og:description"', 'name="twitter:description"'):
