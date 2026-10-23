@@ -607,6 +607,10 @@ addEventListener('keydown',function(e){if(e.key==='Escape')closeNav();});
 (function(){
   var v = document.getElementById('heroVid');
   if (!v) return;
+  // Inside someone else's page (the preview TV on therapistweb.design), the poster is enough.
+  // A 1280px-wide iframe scaled down still decodes the full video, and on Safari that
+  // was enough to crash and reload the parent tab.
+  try { if (window.top !== window.self) return; } catch (e) { return; }
   var mq = function(q){ return window.matchMedia && window.matchMedia(q).matches; };
   var conn = navigator.connection || {};
 
