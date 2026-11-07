@@ -93,6 +93,7 @@ def foot():
     <div class="f-bottom">
       <div>&copy; """ + year + """ Rooted Resonance Coaching &amp; Therapy</div>
       <div>Become yourself. Transform everything.</div>
+      <div class="f-credit">Website by <a href="https://therapistweb.design/" rel="noopener">Therapist Web Design</a></div>
     </div>
   </div>
 </footer>
