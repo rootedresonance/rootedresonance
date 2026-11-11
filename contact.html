@@ -55,8 +55,7 @@
 <section class="sec" style="padding-top:16px">
   <div class="wrap form-grid">
     <div class="rv">
-      <!-- FORM ENDPOINT: replace the action below with the live Formspree ID before launch.
-           On Netlify or Cloudflare Pages this can instead use a native form handler. -->
+      <!-- Posts to /api/contact (functions/api/contact.js), which sends through Resend. -->
       <form id="rrForm" novalidate>
         <div class="field">
           <label for="name">Your name</label>
@@ -195,7 +194,7 @@ if(nl){nl.addEventListener('click',function(e){
   const h=a.getAttribute('href')||'', i=h.indexOf('#');
   if(i<0) return;
   const here=location.pathname.split('/').pop()||'index.html';
-  if(i>0 && h.slice(0,i)!==here) return;          // different page, let it navigate
+  if(i>0 && h.slice(0,i)!==here) return;          // different page, let it load
   const target=document.getElementById(h.slice(i+1));
   if(!target) return;
   e.preventDefault();
@@ -219,19 +218,21 @@ setTimeout(function(){
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function(){
-  // EmailJS public key is meant to be public, but it is still rate limited in the
-  // EmailJS dashboard. Set the allowed origin there too, or anyone can use the key.
-  var PUBLIC_KEY  = 'c6FxNKHnEarXJKqhA';
-  var SERVICE_ID  = 'service_en50p9o';
-  var TEMPLATE_ID = 'template_jrz4074';
+  // Inquiries post to /api/contact (functions/api/contact.js), which sends them
+  // through Resend to the practice inbox and sends the visitor a confirmation.
+  var ENDPOINT = '/api/contact';
+  var LINK = 'style="color:inherit;border-bottom:1px solid currentColor"';
+  var FALLBACK = 'That did not send. Please call <a ' + LINK + ' href="tel:+15134978595">513-497-8595</a>' +
+    ' or email <a ' + LINK + ' href="mailto:rootedresonancetherapy@gmail.com">rootedresonancetherapy@gmail.com</a>.';
+  var SUCCESS = 'Thank you. Your note is on its way, and Annie will reply within two business days. ' +
+    'If you don\'t hear back within two business days, please call <a ' + LINK + ' href="tel:+15134978595">513-497-8595</a>' +
+    ' or email <a ' + LINK + ' href="mailto:rootedresonancetherapy@gmail.com">rootedresonancetherapy@gmail.com</a>.';
 
   var form = document.getElementById('rrForm');
   var status = document.getElementById('rrStatus');
-  if (!form || !window.emailjs) return;
-  emailjs.init({ publicKey: PUBLIC_KEY });
+  if (!form || !status || !window.fetch) return;
 
   var sending = false, last = 0;
   form.addEventListener('submit', function(e){
@@ -247,22 +248,48 @@ document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)
 
     sending = true;
     var btn = form.querySelector('button[type="submit"], .btn-solid');
-    var label = btn ? btn.textContent : '';
-    if (btn) { btn.textContent = 'Sending'; btn.setAttribute('aria-busy','true'); }
+    var label = btn ? btn.innerHTML : '';
+    if (btn) { btn.textContent = 'Sending'; btn.setAttribute('aria-busy','true'); btn.disabled = true; }
     status.className = 'formstatus';
     status.textContent = '';
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form).then(function(){
+    var data = new FormData(form);
+    var payload = {
+      name: data.get('name') || '',
+      email: data.get('email') || '',
+      state: data.get('state') || '',
+      interest: data.get('interest') || '',
+      message: data.get('message') || '',
+      company: data.get('company') || '',
+      'cf-turnstile-response': data.get('cf-turnstile-response') || ''
+    };
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(res){
+      return res.json().catch(function(){ return {}; }).then(function(out){
+        if (!res.ok || !out.ok) {
+          // A 400 with a message means something in the form needs fixing.
+          // Anything else means delivery failed, so show the phone and email.
+          var err = new Error(out.error || 'Request failed');
+          err.fixable = res.status === 400 && Boolean(out.error);
+          throw err;
+        }
+      });
+    }).then(function(){
       last = Date.now();
       form.reset();
       status.className = 'formstatus ok';
-      status.textContent = 'Thank you. Your note is on its way, and Annie will reply within two business days.';
-    }).catch(function(){
+      status.innerHTML = SUCCESS;
+    }).catch(function(err){
       status.className = 'formstatus err';
-      status.textContent = 'That did not send. Please email rootedresonancetherapy@gmail.com or call 513-497-8595.';
-    }).finally(function(){
+      if (err && err.fixable) status.textContent = err.message;
+      else status.innerHTML = FALLBACK;
+    }).then(function(){
       sending = false;
-      if (btn) { btn.textContent = label; btn.removeAttribute('aria-busy'); }
+      if (btn) { btn.innerHTML = label; btn.removeAttribute('aria-busy'); btn.disabled = false; }
     });
   });
 })();
